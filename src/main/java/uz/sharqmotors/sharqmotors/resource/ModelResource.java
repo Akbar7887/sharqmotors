@@ -1,5 +1,3 @@
-package uz.sharqmotors.sharqmotors.resource;
-
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.core.io.Resource;
@@ -7,6 +5,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+
 import uz.sharqmotors.sharqmotors.models.Model;
 import uz.sharqmotors.sharqmotors.models.Option;
 import uz.sharqmotors.sharqmotors.service.ModelService;
@@ -30,7 +29,9 @@ public class ModelResource {
 
     @GetMapping("modelget")
     private ResponseEntity<List<Model>> getall(){
-        return ResponseEntity.ok().body(modelService.getall());
+        return ResponseEntity.ok().body(
+                modelService.getall()
+        );
     }
 
     @PostMapping("modeladd")
