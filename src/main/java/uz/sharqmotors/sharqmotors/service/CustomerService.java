@@ -33,7 +33,7 @@ public class CustomerService implements Serializable {
         findCustomer.setName(customer.getName());
         findCustomer.setPhone(customer.getPhone());
 
-        return customerRepo.save(customer);
+        return customerRepo.save(findCustomer);
 
     }
 }
