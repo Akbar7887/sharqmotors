@@ -34,16 +34,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         CustomAuthenticationFilter customAuthenticationFilter = new CustomAuthenticationFilter((authenticationManagerBean()));
-        customAuthenticationFilter.setFilterProcessesUrl("/login");
+        customAuthenticationFilter.setFilterProcessesUrl("/sharq/login");
         http.csrf().disable();
         http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-        http.authorizeRequests().antMatchers("/login/token/refresh/**").permitAll();
-        http.authorizeRequests().antMatchers(GET,"/api/**").permitAll();
-        http.authorizeRequests().antMatchers(POST,"/custom/customeradd", "/custom/customerorderadd").permitAll();
-        http.authorizeRequests().antMatchers(GET,"/custom/customerget", "/custom/customerorderpost").hasAnyAuthority("ADMIN", "MENEGER");
-        http.authorizeRequests().antMatchers(POST, "/api/**").hasAnyAuthority( "ADMIN", "MENEGER");
-        http.authorizeRequests().antMatchers(PUT, "/api/**").hasAnyAuthority("ADMIN", "MENEGER");
-        http.authorizeRequests().antMatchers(DELETE, "/api/**").hasAnyAuthority("ADMIN", "MENEGER");
+        http.authorizeRequests().antMatchers("/sharq/login/token/refresh/**").permitAll();
+        http.authorizeRequests().antMatchers(GET,"/sharq/**").permitAll();
+        http.authorizeRequests().antMatchers(POST,"/sharq/customeradd", "/sharq/customerorderadd").permitAll();
+        http.authorizeRequests().antMatchers(GET,"/sharq/customerget", "/custom/customerorderpost").hasAnyAuthority("ADMIN", "MENEGER");
+        http.authorizeRequests().antMatchers(POST, "/sharq/**").hasAnyAuthority( "ADMIN", "MENEGER");
+        http.authorizeRequests().antMatchers(PUT, "/sharq/**").hasAnyAuthority("ADMIN", "MENEGER");
+        http.authorizeRequests().antMatchers(DELETE, "/sharq/**").hasAnyAuthority("ADMIN", "MENEGER");
 
 //        http.authorizeRequests().antMatchers(POST, "/api/customeradd").hasAnyAuthority( "ADMIN", "MENEGER");
 

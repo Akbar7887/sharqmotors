@@ -10,7 +10,7 @@ import uz.sharqmotors.sharqmotors.service.OptionService;
 import java.util.List;
 
 @Log4j2
-@RequestMapping("/api/")
+@RequestMapping("/sharq/")
 @RestController
 @RequiredArgsConstructor
 public class OptionResource {

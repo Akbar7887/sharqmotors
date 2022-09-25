@@ -11,7 +11,7 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/custom/")
+@RequestMapping("/sharq/")
 public class CustomerResource {
 
     final CustomerService customerService;

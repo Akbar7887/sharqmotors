@@ -18,7 +18,7 @@ import java.util.List;
 import static org.springframework.http.MediaType.parseMediaType;
 
 @Log4j2
-@RequestMapping("/api/")
+@RequestMapping("/sharq/")
 @RestController
 @RequiredArgsConstructor
 public class SectionResource {

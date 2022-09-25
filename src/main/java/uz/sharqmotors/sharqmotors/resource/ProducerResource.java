@@ -18,7 +18,7 @@ import java.util.List;
 import static org.springframework.http.MediaType.parseMediaType;
 
 @Log4j2
-@RequestMapping("/api/")
+@RequestMapping("/sharq/")
 @RequiredArgsConstructor
 @RestController
 public class ProducerResource {

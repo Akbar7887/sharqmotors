@@ -29,38 +29,38 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/login")
+@RequestMapping("/sharq/")
 public class UserResource {
     private final UserService userService;
 //    private final UserServiceIml userServiceIml;
 
 
-    @GetMapping("/users")
+    @GetMapping("login/users")
     public ResponseEntity<List<AppUser>> getuser() {
         return ResponseEntity.ok().body(userService.getUser());
     }
 
-    @PostMapping("/user/save")
+    @PostMapping("login/user/save")
     public ResponseEntity<AppUser> saveUser(@RequestBody AppUser user) {
-        URI uri = URI.create(ServletUriComponentsBuilder.fromCurrentContextPath().path("/login/user/save").toUriString());
+        URI uri = URI.create(ServletUriComponentsBuilder.fromCurrentContextPath().path("sharq/login/user/save").toUriString());
         return ResponseEntity.created(uri).body(userService.saveUser(user));
     }
 
-    @PostMapping("/role/save")
+    @PostMapping("login/role/save")
     public ResponseEntity<Role> saveUser(@RequestBody Role role) {
         URI uri = URI.create(ServletUriComponentsBuilder.fromCurrentContextPath().path("/login/role/save").toUriString());
 
         return ResponseEntity.created(uri).body(userService.saveRole(role));
     }
 
-    @PostMapping("/role/addtouser")
+    @PostMapping("login/role/addtouser")
     public ResponseEntity<?> addRoleToUser(@RequestBody RoleToUserform roleToUserform) {
 
         userService.addRoleToUser(roleToUserform.getUsername(), roleToUserform.getRolename());
         return ResponseEntity.ok().build();
     }
 
-    @GetMapping("/token/refresh")
+    @GetMapping("login/token/refresh")
     public void refreshToken(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String authorizationHeader = request.getHeader(AUTHORIZATION);
         if (authorizationHeader != null && authorizationHeader.startsWith("Bearer ")) {

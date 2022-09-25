@@ -10,7 +10,7 @@ import uz.sharqmotors.sharqmotors.service.RateService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/")
+@RequestMapping("/sharq/")
 @RequiredArgsConstructor
 public class RateResource {
 

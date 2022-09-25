@@ -9,7 +9,7 @@ import uz.sharqmotors.sharqmotors.service.OptionConstantService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/")
+@RequestMapping("/sharq/")
 @RequiredArgsConstructor
 public class OptionControlResource {
 

@@ -9,7 +9,7 @@ import uz.sharqmotors.sharqmotors.service.CustomerOrderService;
 import java.util.List;
 
 
-@RequestMapping("/custom/")
+@RequestMapping("/sharq/")
 @RequiredArgsConstructor
 @RestController
 public class CustomerOrderResource {
