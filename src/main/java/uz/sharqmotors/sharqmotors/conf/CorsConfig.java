@@ -21,7 +21,7 @@ public class CorsConfig {
         CorsConfiguration config = new CorsConfiguration();
         config.setAllowCredentials(true);
 
-        config.setAllowedOrigins(List.of("http://localhost:8087", "https://tascom.uz"));
+        config.setAllowedOrigins(List.of("http://localhost:8087", "https://tascom.uz", "http://localhost:8085"));
         config.setAllowedMethods(Collections.singletonList("GET"));
         config.setAllowedHeaders(Collections.singletonList("*"));
         source.registerCorsConfiguration("/**", config);
